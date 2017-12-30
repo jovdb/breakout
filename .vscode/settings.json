@@ -1,0 +1,11 @@
+{
+    "tslint.enable": true,
+    "tslint.jsEnable": false,
+    "tslint.run": "onType",
+    "tslint.configFile": "./tslint.json",
+    "tslint.ignoreDefinitionFiles": true,
+    "tslint.alwaysShowRuleFailuresAsWarnings": false,
+    "tslint.autoFixOnSave": true,
+    "tslint.nodePath": "node_modules",
+    "typescript.tsdk": "node_modules/typescript/lib"
+}
