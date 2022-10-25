@@ -67,21 +67,10 @@ declare global {
 		readonly name: TName;
 	}
 
-	// Build maps of known messages */
-	type MessageMapValidator<T extends string> = {
-		[P in T]: Message<P>;
-	};
-
 	/** Should be augmented with new Messages */
-	interface MessageMap extends MessageMapValidator<keyof MessageMap> {}
+	interface MessageMap {}
 	type MessageNames = keyof MessageMap;
 	type AllowedMessages = MessageMap[MessageNames];
-
-	type FilterMessageOnProp<TPropName extends string, TMap extends MessageMap = MessageMap> = TMap[{
-		[TName in keyof TMap]: keyof TMap[TName] & TPropName & TMap[TName]; // & TPropName
-	}[keyof { // X[keyof X] // trick to remove never props from Type
-		[TName in keyof TMap]: keyof TMap[TName] & TPropName & TMap[TName];
-	}]["name"]];
 
 }
 

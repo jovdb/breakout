@@ -17,7 +17,7 @@ declare global {
 	type CollisionSide = "top" | "left" | "bottom" | "right";
 
 	// Add Messages
-	interface MessageMap extends MessageMapValidator<keyof MessageMap> {
+	interface MessageMap {
 		"Collision": { name: "Collision"; entity: IEntity & IPosition & ISize; collidedWith: IEntity; side: CollisionSide; collisionVelocityX: number; collisionVelocityY: number };
 	}
 }

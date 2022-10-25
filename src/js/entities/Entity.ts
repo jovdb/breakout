@@ -103,7 +103,7 @@ declare global {
 	}
 
 	// Augment MessageMap
-	interface MessageMap extends MessageMapValidator<keyof MessageMap> {
+	interface MessageMap {
 		"EntityCreated": { name: "EntityCreated"; entity: IEntity };
 		"EntityDispose": { name: "EntityDispose"; entity: IEntity };
 	}

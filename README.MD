@@ -1,6 +1,6 @@
 # Breakout
 
-Created an Entity Component System (ECS) and build a simple breakout game with it.
+POC: Created an Entity Component System (ECS) and build a simple breakout game with it.
 
 - Build with TypeScript, strong typed as much as possible.
 - Uses an entity pool, and reuse disposed entities
@@ -13,4 +13,4 @@ Created an Entity Component System (ECS) and build a simple breakout game with i
 
 
 ## Test it:
-[http://users.pandora.be/jo.van.den.berghe/breakout](http://users.pandora.be/jo.van.den.berghe/breakout)
+[https://jovdb.github.io/breakout](https://jovdb.github.io/breakout)

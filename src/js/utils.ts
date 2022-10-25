@@ -3,9 +3,6 @@ declare global {
 
 	type Diff<T extends string, U extends string> = ({[P in T]: P } & {[P in U]: never } & { [x: string]: never })[T];
 
-	/** Remove the keys from a types */
-	type Omit<TObject, Key extends keyof TObject> = {[P in Diff<keyof TObject, Key>]: TObject[P]};
-
 }
 
 /**
