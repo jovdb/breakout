@@ -14,11 +14,11 @@ export function createCache<T = undefined, TFn extends (...args: any[]) => T = (
 	const cacheWrapper = (...args: any[]) => {
 
 		// First check if we have a cached version
-		const id = getId.apply(undefined, args);
+		const id = getId(...args);
 		if (id in cacheObject) return cacheObject[id];
 
 		// Get and cache result
-		return cacheObject[id] = getFunction.apply(undefined, args);
+		return cacheObject[id] = getFunction(...args);
 	};
 
 	// Add a clearCache function

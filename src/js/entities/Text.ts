@@ -14,7 +14,7 @@ export function createText(centerX = 0, centerY = 0, text = "", fillColor = "#00
 
 	return createEntity("Text", entity => {
 		const e: IText = entity.addComponents(positionComponent, renderableComponent) as any;
-		e.x = centerX,
+		e.x = centerX;
 		e.y = centerY;
 		e.text = text;
 		e.fillColor = fillColor;

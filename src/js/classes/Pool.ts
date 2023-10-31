@@ -1,3 +1,5 @@
+import { IComponent } from "../components/IComponent";
+
 export class Pool {
 
 	private used: IEntity[];

@@ -1,3 +1,5 @@
+import { IComponent } from "./IComponent";
+
 declare global {
 	interface IGravity {
 		gravityY: number;

@@ -400,7 +400,7 @@ export class RenderSystem {
 
 		// Create a Pattern
 		const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-		let data = imgData.data;
+		const data = imgData.data;
 		const toggleHeight = Math.floor(canvas.height / 2.6);
 
 		for (let y = 0; y < canvas.height; y++) {

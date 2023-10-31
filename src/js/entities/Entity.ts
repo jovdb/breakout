@@ -12,10 +12,10 @@
 ╰────────────────────────────────╯
 
 
-- Enitities can have components
+- Entities can have components
 - Components add data to the entity
 
-                                   - Systems query the enities pool for specific components
+                                   - Systems query the entities pool for specific components
 
 ╭─────────────╮                                         ╭─────────────────╮
 │ B A L L     │                                         │                 │
@@ -63,6 +63,7 @@
 
 import { broadcaster } from "../classes/Broadcaster";
 import { entityPool } from "../classes/Pool";
+import { IComponent } from "../components/IComponent";
 
 declare global {
 
