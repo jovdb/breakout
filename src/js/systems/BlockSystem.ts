@@ -1,16 +1,16 @@
-import { broadcaster } from "../classes/Broadcaster";
-import { entityPool } from "../classes/Pool";
-import { gravityComponent } from "../components/GravityComponent";
-import { powerComponent } from "../components/PowerComponent";
-import { createBall, isBall } from "../entities/Ball";
-import { isBlock } from "../entities/Block";
-import { isBullet } from "../entities/Bullet";
-import { createGun } from "../entities/Gun";
-import { createParticle } from "../entities/Particle";
-import { createText } from "../entities/Text";
-import { isWorld } from "../entities/World";
-import { exhaustiveFail } from "../utils";
-import { ballSize, powerBallSize } from "./RenderSystem";
+import { broadcaster } from "../classes/Broadcaster.js";
+import { entityPool } from "../classes/Pool.js";
+import { gravityComponent } from "../components/GravityComponent.js";
+import { powerComponent } from "../components/PowerComponent.js";
+import { createBall, isBall } from "../entities/Ball.js";
+import { isBlock } from "../entities/Block.js";
+import { isBullet } from "../entities/Bullet.js";
+import { createGun } from "../entities/Gun.js";
+import { createParticle } from "../entities/Particle.js";
+import { createText } from "../entities/Text.js";
+import { isWorld } from "../entities/World.js";
+import { exhaustiveFail } from "../utils.js";
+import { ballSize, powerBallSize } from "./RenderSystem.js";
 
 /** Cleanup items that go off-screen */
 export class BlockSystem {

@@ -1,6 +1,6 @@
-import { positionComponent } from "../components/PositionComponent";
-import { renderableComponent } from "../components/RenderComponent";
-import { createEntity } from "./Entity";
+import { positionComponent } from "../components/PositionComponent.js";
+import { renderableComponent } from "../components/RenderComponent.js";
+import { createEntity } from "./Entity.js";
 
 declare global {
 	interface IText extends IEntity<"Text">, IPosition, IRenderable {

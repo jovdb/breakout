@@ -1,12 +1,12 @@
-import { level } from "../classes/Level";
-import { entityPool } from "../classes/Pool";
-import { collideComponent } from "../components/CollideComponent";
-import { gravityComponent } from "../components/GravityComponent";
-import { positionComponent } from "../components/PositionComponent";
-import { sizeComponent } from "../components/SizeComponent";
-import { createBall, isBall } from "../entities/Ball";
-import { isBlock } from "../entities/Block";
-import { isPalette } from "../entities/Palette";
+import { level } from "../classes/Level.js";
+import { entityPool } from "../classes/Pool.js";
+import { collideComponent } from "../components/CollideComponent.js";
+import { gravityComponent } from "../components/GravityComponent.js";
+import { positionComponent } from "../components/PositionComponent.js";
+import { sizeComponent } from "../components/SizeComponent.js";
+import { createBall, isBall } from "../entities/Ball.js";
+import { isBlock } from "../entities/Block.js";
+import { isPalette } from "../entities/Palette.js";
 
 /** Cleanup items that go off-screen */
 export class CleanUpSystem {

@@ -1,8 +1,8 @@
-import { collideComponent } from "../components/CollideComponent";
-import { positionComponent } from "../components/PositionComponent";
-import { renderableComponent } from "../components/RenderComponent";
-import { sizeComponent } from "../components/SizeComponent";
-import { createEntity } from "./Entity";
+import { collideComponent } from "../components/CollideComponent.js";
+import { positionComponent } from "../components/PositionComponent.js";
+import { renderableComponent } from "../components/RenderComponent.js";
+import { sizeComponent } from "../components/SizeComponent.js";
+import { createEntity } from "./Entity.js";
 
 declare global {
 	type BlockEffect = "extraBall" | "gun" | "powerball";

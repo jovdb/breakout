@@ -1,4 +1,4 @@
-import { IComponent } from "./IComponent";
+import { IComponent } from "./IComponent.js";
 
 declare global {
 	interface ISize {
@@ -21,8 +21,8 @@ class SizeComponent implements IComponent<ISize> {
 	}
 
 	public removeFrom(entity: IMutableEntity & ISize) {
-		delete entity.width;
-		delete entity.height;
+		delete (entity as any).width;
+		delete (entity as any).height;
 	}
 
 	public isOn<TEntity extends IEntity>(entity: TEntity): entity is TEntity & ISize {

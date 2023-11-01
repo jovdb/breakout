@@ -1,15 +1,15 @@
-import { broadcaster } from "../classes/Broadcaster";
-import { entityPool } from "../classes/Pool";
-import { collideComponent } from "../components/CollideComponent";
-import { positionComponent } from "../components/PositionComponent";
-import { powerComponent } from "../components/PowerComponent";
-import { sizeComponent } from "../components/SizeComponent";
-import { velocityComponent } from "../components/VelocityComponent";
-import { isBall } from "../entities/Ball";
-import { isBlock } from "../entities/Block";
-import { isPalette } from "../entities/Palette";
-import { isWorld } from "../entities/World";
-import { exhaustiveFail } from "../utils";
+import { broadcaster } from "../classes/Broadcaster.js";
+import { entityPool } from "../classes/Pool.js";
+import { collideComponent } from "../components/CollideComponent.js";
+import { positionComponent } from "../components/PositionComponent.js";
+import { powerComponent } from "../components/PowerComponent.js";
+import { sizeComponent } from "../components/SizeComponent.js";
+import { velocityComponent } from "../components/VelocityComponent.js";
+import { isBall } from "../entities/Ball.js";
+import { isBlock } from "../entities/Block.js";
+import { isPalette } from "../entities/Palette.js";
+import { isWorld } from "../entities/World.js";
+import { exhaustiveFail } from "../utils.js";
 
 
 declare global {

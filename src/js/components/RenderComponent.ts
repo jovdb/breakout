@@ -1,4 +1,4 @@
-import { IComponent } from "./IComponent";
+import { IComponent } from "./IComponent.js";
 
 declare global {
 	interface IRenderable {
@@ -15,7 +15,7 @@ class RendarableComponent implements IComponent<IRenderable> {
 	}
 
 	public removeFrom(entity: IMutableEntity & IRenderable) {
-		delete entity.canRender;
+		delete (entity as any).canRender;
 	}
 
 	public isOn<TEntity extends IEntity>(entity: TEntity): entity is TEntity & IRenderable {

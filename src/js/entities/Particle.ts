@@ -1,9 +1,9 @@
-import { gravityComponent } from "../components/GravityComponent";
-import { positionComponent } from "../components/PositionComponent";
-import { renderableComponent } from "../components/RenderComponent";
-import { sizeComponent } from "../components/SizeComponent";
-import { velocityComponent } from "../components/VelocityComponent";
-import { createEntity } from "./Entity";
+import { gravityComponent } from "../components/GravityComponent.js";
+import { positionComponent } from "../components/PositionComponent.js";
+import { renderableComponent } from "../components/RenderComponent.js";
+import { sizeComponent } from "../components/SizeComponent.js";
+import { velocityComponent } from "../components/VelocityComponent.js";
+import { createEntity } from "./Entity.js";
 
 declare global {
 	interface IParticle extends IEntity<"Particle">, IPosition, ISize, IRenderable, IGravity, IVelocity {

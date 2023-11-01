@@ -1,9 +1,9 @@
-import { collideComponent } from "../components/CollideComponent";
-import { positionComponent } from "../components/PositionComponent";
-import { renderableComponent } from "../components/RenderComponent";
-import { sizeComponent } from "../components/SizeComponent";
-import { velocityComponent } from "../components/VelocityComponent";
-import { createEntity } from "./Entity";
+import { collideComponent } from "../components/CollideComponent.js";
+import { positionComponent } from "../components/PositionComponent.js";
+import { renderableComponent } from "../components/RenderComponent.js";
+import { sizeComponent } from "../components/SizeComponent.js";
+import { velocityComponent } from "../components/VelocityComponent.js";
+import { createEntity } from "./Entity.js";
 
 declare global {
 	interface IBullet extends IEntity<"Bullet">, IPosition, ISize, IRenderable, IVelocity, ICollides {}

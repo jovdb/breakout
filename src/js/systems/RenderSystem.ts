@@ -1,21 +1,21 @@
-import { broadcaster } from "../classes/Broadcaster";
-import { createCache } from "../classes/cache";
-import { entityPool } from "../classes/Pool";
-import { positionComponent } from "../components/PositionComponent";
-import { powerComponent } from "../components/PowerComponent";
-import { renderableComponent } from "../components/RenderComponent";
-import { sizeComponent } from "../components/SizeComponent";
-import { velocityComponent } from "../components/VelocityComponent";
-import { isBall } from "../entities/Ball";
-import { isBlock } from "../entities/Block";
-import { isBullet } from "../entities/Bullet";
-import { isEntity } from "../entities/Entity";
-import { isGun } from "../entities/Gun";
-import { isPalette } from "../entities/Palette";
-import { isParticle } from "../entities/Particle";
-import { isText } from "../entities/Text";
-import { isWorld } from "../entities/World";
-import { exhaustiveFail } from "../utils";
+import { broadcaster } from "../classes/Broadcaster.js";
+import { createCache } from "../classes/cache.js";
+import { entityPool } from "../classes/Pool.js";
+import { positionComponent } from "../components/PositionComponent.js";
+import { powerComponent } from "../components/PowerComponent.js";
+import { renderableComponent } from "../components/RenderComponent.js";
+import { sizeComponent } from "../components/SizeComponent.js";
+import { velocityComponent } from "../components/VelocityComponent.js";
+import { isBall } from "../entities/Ball.js";
+import { isBlock } from "../entities/Block.js";
+import { isBullet } from "../entities/Bullet.js";
+import { isEntity } from "../entities/Entity.js";
+import { isGun } from "../entities/Gun.js";
+import { isPalette } from "../entities/Palette.js";
+import { isParticle } from "../entities/Particle.js";
+import { isText } from "../entities/Text.js";
+import { isWorld } from "../entities/World.js";
+import { exhaustiveFail } from "../utils.js";
 
 /**
  * Draw items to screen

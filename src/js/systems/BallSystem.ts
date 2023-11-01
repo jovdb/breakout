@@ -1,7 +1,7 @@
-import { entityPool } from "../classes/Pool";
-import { positionComponent } from "../components/PositionComponent";
-import { velocityComponent } from "../components/VelocityComponent";
-import { isBall } from "../entities/Ball";
+import { entityPool } from "../classes/Pool.js";
+import { positionComponent } from "../components/PositionComponent.js";
+import { velocityComponent } from "../components/VelocityComponent.js";
+import { isBall } from "../entities/Ball.js";
 
 /** Cleanup items that go off-screen */
 export class BallSystem {

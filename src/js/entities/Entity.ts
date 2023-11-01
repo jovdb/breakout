@@ -15,7 +15,7 @@
 - Entities can have components
 - Components add data to the entity
 
-                                   - Systems query the entities pool for specific components
+								   - Systems query the entities pool for specific components
 
 ╭─────────────╮                                         ╭─────────────────╮
 │ B A L L     │                                         │                 │
@@ -38,32 +38,32 @@
 │             │                                         │                 │
 ╰─────────────╯                                         ╰─────────────────╯
 
-                                                        ╭─────────────────╮
-                                                        │                 │
-                                             ┌╴╴╴╴╴╴╴╴╴╴└──────┐          │
-                                             ╷ POSITION      ┌─┘          │
-                                             ╵               └─┐  R    S  │
-                                             └╴╴╴╴╴╴╴╴╴╴┌──────┘          │
-                                             ┌╴╴╴╴╴╴╴╴╴╴└──────╮  E    Y  │
-                                             ╷ SIZE           ┌┘          │
-                                             ╵                └┐  N    S  │
-                                             └╴╴╴╴╴╴╴╴╴╴┌──────╯          │
-                                                        │         D    T  │
-                                                        │                 │
-                                                        │         E    E  │
-                                                        │                 │
-                                             ┌╴╴╴╴╴╴╴╴╴╴└──────╮  R    M  │
-                                             ╷ RENDERABLE     ╭╯          │
-                                             ╵                ╰─╮         │
-                                             └╴╴╴╴╴╴╴╴╴╴┌───────┘         │
-                                                        │                 │
-                                                        ╰─────────────────╯
+														╭─────────────────╮
+														│                 │
+											 ┌╴╴╴╴╴╴╴╴╴╴└──────┐          │
+											 ╷ POSITION      ┌─┘          │
+											 ╵               └─┐  R    S  │
+											 └╴╴╴╴╴╴╴╴╴╴┌──────┘          │
+											 ┌╴╴╴╴╴╴╴╴╴╴└──────╮  E    Y  │
+											 ╷ SIZE           ┌┘          │
+											 ╵                └┐  N    S  │
+											 └╴╴╴╴╴╴╴╴╴╴┌──────╯          │
+														│         D    T  │
+														│                 │
+														│         E    E  │
+														│                 │
+											 ┌╴╴╴╴╴╴╴╴╴╴└──────╮  R    M  │
+											 ╷ RENDERABLE     ╭╯          │
+											 ╵                ╰─╮         │
+											 └╴╴╴╴╴╴╴╴╴╴┌───────┘         │
+														│                 │
+														╰─────────────────╯
 
 */
 
-import { broadcaster } from "../classes/Broadcaster";
-import { entityPool } from "../classes/Pool";
-import { IComponent } from "../components/IComponent";
+import { broadcaster } from "../classes/Broadcaster.js";
+import { entityPool } from "../classes/Pool.js";
+import { IComponent } from "../components/IComponent.js";
 
 declare global {
 
@@ -123,6 +123,20 @@ class Entity<TLabel extends string = ""> implements IEntity<TLabel> {
 		this.onDispose = onDispose;
 	}
 
+	public static reuse<TLabel extends string = "">(
+		entity: Entity<TLabel>,
+		label: TLabel,
+		onDispose?: (entity: IEntity<TLabel>) => void,
+	): Entity<TLabel> {
+		entity.onDispose?.(entity);
+
+		entity.label = label;
+		entity.id = Entity.createNewId();
+		entity.onDispose = onDispose;
+
+		return entity;
+	}
+
 	public addComponents<TProps extends object = {}>(component: IComponent<TProps>): this & TProps;
 	public addComponents<TProps1 extends object = {}, TProps2 extends object = {}>(component1: IComponent<TProps1>, component2: IComponent<TProps2>): this & TProps1 & TProps2;
 	public addComponents<TProps1 extends object = {}, TProps2 extends object = {}, TProps3 extends object = {}>(component1: IComponent<TProps1>, component2: IComponent<TProps2>, component3: IComponent<TProps3>): this & TProps1 & TProps2 & TProps3;
@@ -160,8 +174,8 @@ class Entity<TLabel extends string = ""> implements IEntity<TLabel> {
 		}
 
 		// Remove own properties
-		delete this.id;
-		delete this.label;
+		delete (this as any).id;
+		delete (this as any).label;
 	}
 
 	/** Counter to generate a unique ID */
@@ -187,13 +201,13 @@ export function createEntity<TLabel extends string, TEntity extends IEntity<TLab
 	if (reusedEntity && reusedEntity instanceof Entity) {
 
 		// Call Entity constructor on recycled empty entity
-		Entity.call(reusedEntity, label, disposeEntity);
+		Entity.reuse(reusedEntity, label, disposeEntity);
 
 		// Execute init callback
 		if (init) init(reusedEntity);
 
 		// Notify a new Entity is Created
-		broadcaster.publish({name: "EntityCreated", entity: reusedEntity});
+		broadcaster.publish({ name: "EntityCreated", entity: reusedEntity });
 
 		return reusedEntity as any;
 	}
@@ -209,14 +223,14 @@ export function createEntity<TLabel extends string, TEntity extends IEntity<TLab
 	if (init) init(newEntity as any);
 
 	// Notify a new Entity is Created
-	broadcaster.publish({name: "EntityCreated", entity: newEntity});
+	broadcaster.publish({ name: "EntityCreated", entity: newEntity });
 
 	return newEntity as any;
 }
 
 function disposeEntity(entity: IEntity) {
 	// Notify an Entity will be disposed
-	broadcaster.publish({name: "EntityDispose", entity});
+	broadcaster.publish({ name: "EntityDispose", entity });
 
 	// Remove all components (HACK: now done by removing all props)
 	// Components could hold listen to dispose message and call EntityDispose

@@ -1,4 +1,4 @@
-import { IComponent } from "./IComponent";
+import { IComponent } from "./IComponent.js";
 
 declare global {
 
@@ -22,8 +22,8 @@ class CollideComponent implements IComponent<ICollides> {
 	}
 
 	public removeFrom(entity: IMutableEntity & ICollides) {
-		delete entity.bounceFactor;
-		delete entity.collidesWith;
+		delete (entity as any).bounceFactor;
+		delete (entity as any).collidesWith;
 	}
 
 	public isOn<TEntity extends IEntity>(entity: TEntity): entity is TEntity & ICollides {

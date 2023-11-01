@@ -1,7 +1,7 @@
-import { entityPool } from "../classes/Pool";
-import { gravityComponent } from "../components/GravityComponent";
-import { positionComponent } from "../components/PositionComponent";
-import { velocityComponent } from "../components/VelocityComponent";
+import { entityPool } from "../classes/Pool.js";
+import { gravityComponent } from "../components/GravityComponent.js";
+import { positionComponent } from "../components/PositionComponent.js";
+import { velocityComponent } from "../components/VelocityComponent.js";
 
 
 /** Keeps entities moving */

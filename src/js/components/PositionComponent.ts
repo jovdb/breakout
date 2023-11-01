@@ -1,4 +1,4 @@
-import { IComponent } from "./IComponent";
+import { IComponent } from "./IComponent.js";
 
 declare global {
 	interface IPosition {
@@ -20,8 +20,8 @@ class PositionComponent implements IComponent<IPosition> {
 	}
 
 	public removeFrom(entity: IMutableEntity & IPosition) {
-		delete entity.x;
-		delete entity.y;
+		delete (entity as any).x;
+		delete (entity as any).y;
 	}
 
 	public isOn<TEntity extends IEntity>(entity: TEntity): entity is TEntity & IPosition {

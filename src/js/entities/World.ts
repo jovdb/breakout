@@ -1,6 +1,6 @@
-import { renderableComponent } from "../components/RenderComponent";
-import { sizeComponent } from "../components/SizeComponent";
-import { createEntity } from "./Entity";
+import { renderableComponent } from "../components/RenderComponent.js";
+import { sizeComponent } from "../components/SizeComponent.js";
+import { createEntity } from "./Entity.js";
 
 declare global {
 	interface IWorld extends IEntity<"World">, ISize, IRenderable {}

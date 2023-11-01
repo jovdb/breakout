@@ -1,8 +1,8 @@
-import { broadcaster } from "../classes/Broadcaster";
-import { entityPool } from "../classes/Pool";
-import { createBullet } from "../entities/Bullet";
-import { isGun } from "../entities/Gun";
-import { isPalette } from "../entities/Palette";
+import { broadcaster } from "../classes/Broadcaster.js";
+import { entityPool } from "../classes/Pool.js";
+import { createBullet } from "../entities/Bullet.js";
+import { isGun } from "../entities/Gun.js";
+import { isPalette } from "../entities/Palette.js";
 
 export class GunSystem {
 

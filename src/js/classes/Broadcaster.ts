@@ -107,7 +107,8 @@ export class Broadcaster implements IBroadcaster {
 	public subscribeOnMessage<TMessageName extends MessageNames>(messageName: TMessageName, onMessage: BroadcasterListener<MessageMap[TMessageName]>): () => void {
 
 		function subscribeOnMessageFilter(message: AllowedMessages, executeAfter: (handlerToQueue: (message: AllowedMessages) => void) => any) {
-			if (message.name === messageName) onMessage(message, executeAfter);
+			// message type correct?
+			if (message.name === messageName) onMessage(message as any, executeAfter as any);
 		}
 		this.listeners.push(subscribeOnMessageFilter);
 

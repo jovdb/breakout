@@ -1,8 +1,8 @@
-import { broadcaster } from "../classes/Broadcaster";
-import { gravityComponent } from "../components/GravityComponent";
-import { velocityComponent } from "../components/VelocityComponent";
-import { isBall } from "../entities/Ball";
-import { isPalette } from "../entities/Palette";
+import { broadcaster } from "../classes/Broadcaster.js";
+import { gravityComponent } from "../components/GravityComponent.js";
+import { velocityComponent } from "../components/VelocityComponent.js";
+import { isBall } from "../entities/Ball.js";
+import { isPalette } from "../entities/Palette.js";
 
 type Direction = "left" | "right" | "";
 

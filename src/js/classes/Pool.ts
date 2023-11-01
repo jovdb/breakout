@@ -1,4 +1,4 @@
-import { IComponent } from "../components/IComponent";
+import { IComponent } from "../components/IComponent.js";
 
 export class Pool {
 

@@ -4,24 +4,24 @@ I used a bundler from the start, but because I don't need any 3th Party librarie
 I could just use Typescript references without bundling
 */
 
-import { level } from "./classes/Level";
-import "./components/IComponent";
+import { level } from "./classes/Level.js";
+import "./components/IComponent.js";
 
 // Entities
-import { createBall } from "./entities/Ball";
-import { createBlock } from "./entities/Block";
-import { createPalette } from "./entities/Palette";
-import { createWorld } from "./entities/World";
+import { createBall } from "./entities/Ball.js";
+import { createBlock } from "./entities/Block.js";
+import { createPalette } from "./entities/Palette.js";
+import { createWorld } from "./entities/World.js";
 
 // Systems
-import { BallSystem } from "./systems/BallSystem";
-import { BlockSystem } from "./systems/BlockSystem";
-import { CleanUpSystem } from "./systems/CleanUpSystem";
-import { CollisionSystem } from "./systems/CollisionSystem";
-import { GunSystem } from "./systems/GunSystem";
-import { PaletteSystem } from "./systems/PaletteSystem";
-import { RenderSystem } from "./systems/RenderSystem";
-import { VelocitySystem } from "./systems/VelocitySystem";
+import { BallSystem } from "./systems/BallSystem.js";
+import { BlockSystem } from "./systems/BlockSystem.js";
+import { CleanUpSystem } from "./systems/CleanUpSystem.js";
+import { CollisionSystem } from "./systems/CollisionSystem.js";
+import { GunSystem } from "./systems/GunSystem.js";
+import { PaletteSystem } from "./systems/PaletteSystem.js";
+import { RenderSystem } from "./systems/RenderSystem.js";
+import { VelocitySystem } from "./systems/VelocitySystem.js";
 
 
 declare global {

@@ -1,4 +1,4 @@
-import { IComponent } from "./IComponent";
+import { IComponent } from "./IComponent.js";
 
 declare global {
 	interface IPower {
@@ -15,7 +15,7 @@ class PowerComponent implements IComponent<IPower> {
 	}
 
 	public removeFrom(entity: IMutableEntity & IPower) {
-		delete entity.hasPower;
+		delete (entity as any).hasPower;
 	}
 
 	public isOn<TEntity extends IEntity>(entity: TEntity): entity is TEntity & IPower {
